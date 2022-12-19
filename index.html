@@ -5,8 +5,60 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>innerHTML and input value</title>
+        <link rel="stylesheet"  href="./css/style.css">
+        <style>
+
+        </style>
+        <script>
+            // before the closing of head tag
+        </script>
     </head>
     <body>
-        
+        <div data-suraj="suraj">suraj</div>
+        <p class="myp"></p>
+        <hr>
+        <form>
+            <label for="fullname">fullname</label>
+            <input type="text" id="fullname">
+
+            <label for="gender">gender</label>
+            <select id="gender">
+                <option value="male">male</option>
+                <option value="female">female</option>
+                <option value="other">other</option>
+            </select>
+            <input type="button" value="submit" onclick="submitdata()">
+        </form>
+
+        <button onclick="oklabs()">click me</button>
+
+        <script>
+            // before the closing of body tag
+
+
+            //object.method
+            let element = document.querySelector('div[data-suraj="suraj"]');    // skap charter
+            let element2 = document.querySelector('p.myp')
+            // global variabal
+            let fullname = document.querySelector('#fullname')
+
+            console.log(element.innerHTML);
+            console.log(element2);
+            element2.innerHTML = 'hello' + element.innerHTML;
+
+            //1. Function defination
+            function oklabs(){
+                fullname.value ='hello'+ element.innerHTML;
+                console.log(`hello from oklabs function body`);
+            }
+            //functional definational
+            let d1 = document.querySelector('input#fullname');
+            let d2 = document.querySelector('select#gender');
+
+            function submitdata(){
+               console.log(d1.value)
+               console.log(d2.value)
+            }
+        </script>
     </body>
 </html>
